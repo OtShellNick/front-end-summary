@@ -1,0 +1,48 @@
+@import "src/app/main";
+
+.about {
+  padding: 3vh 2vw;
+
+  &__heading {
+    font-size: 34px;
+    font-weight: 600;
+    padding-right: 28vw;
+    margin-bottom: 24px;
+    color: $white;
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 400;
+    color: $white;
+    margin-bottom: 65px;
+  }
+
+  &__i-can {
+    margin-bottom: 9vh;
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    &__item {
+      width: 16vw;
+      margin-right: 2vw;
+      padding: 24px 40px 24px 0;
+
+      &_img {
+        margin-bottom: 2vh;
+      }
+
+      &_img > svg {
+        height: 80%;
+      }
+
+      &_description {
+        font-weight: 400;
+      }
+    }
+  }
+}

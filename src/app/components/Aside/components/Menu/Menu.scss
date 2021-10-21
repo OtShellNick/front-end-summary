@@ -1,0 +1,31 @@
+@import "src/app/main";
+
+li {
+  color: $white;
+  list-style-type: none;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  &_item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+
+    &__active {
+      border-top: 2px solid $bodyBackground;
+      border-bottom: 2px solid $bodyBackground;
+      background-image: url("./assets/active_menu.svg");
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+  }
+}
+

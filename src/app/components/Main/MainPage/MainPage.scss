@@ -1,0 +1,42 @@
+@import "src/app/main";
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 7vh;
+  background-image: url("./assets/main.svg");
+  background-repeat: no-repeat;
+  background-position: center 55vh;
+
+  &__heading {
+    width: 36vw;
+    margin-bottom: 5vh;
+    font-size: 54px;
+    line-height: 70px;
+    font-weight: 700;
+    text-align: center;
+    color: $white;
+  }
+
+  &__description {
+    font-size: 24px;
+    margin-bottom: 5vh;
+    color: $white;
+  }
+
+  &__my-works {
+    padding: 16px 50px;
+    color: $white;
+    font-size: 24px;
+    font-weight: 500;
+    border: 2px solid $orange;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient(90.06deg, rgba(255, 160, 27, 0.2) 0.71%, rgba(255, 255, 255, 0.2) 49.45%, rgba(255, 160, 27, 0.2) 99.96%), $orange;
+    }
+  }
+}

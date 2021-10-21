@@ -1,0 +1,11 @@
+@import "src/app/main";
+
+.aside {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 25%;
+  background-color: $black;
+}
