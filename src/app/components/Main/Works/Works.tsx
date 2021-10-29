@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import * as classnames from "classnames";
 
 import './Works.scss';
@@ -31,7 +31,7 @@ const NAV: Array<INav> = [
 ]
 
 export const Works = () => {
-    const [activeTab, setActiveTab] = useState('all')
+    const [activeTab, setActiveTab] = useState('all');
     return <section className='works'>
         <h1 className='works__heading'>Мои работы</h1>
         <nav className='works__nav'>
@@ -48,7 +48,7 @@ export const Works = () => {
             </ul>
         </nav>
         <main className='works__projects'>
-            {PROJECTS.map(project => <ProjectCard name={project.name} tags={project.tags} img={project.img}/>)}
+            {PROJECTS.filter(project => activeTab === 'all' ? project : project.tags.includes(activeTab)).map(project => <ProjectCard name={project.name} tags={project.tags} img={project.img}/>)}
         </main>
     </section>
 }

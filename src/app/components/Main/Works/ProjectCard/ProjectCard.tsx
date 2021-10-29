@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 
 import './ProjectCard.scss';
+
+import {Modal} from "@components/Modal/Modal";
 
 interface IProjectCardProps {
     name: string;
@@ -8,13 +10,23 @@ interface IProjectCardProps {
     img?: string;
 }
 
-export const ProjectCard = ({ name, tags, img }: IProjectCardProps) => {
-console.log(img)
+export const ProjectCard = ({name, tags, img}: IProjectCardProps) => {
+    const [isModal, setIsModal] = useState(false);
+
+    console.log(img)
     return <div className='card'>
         <img src={img} alt="resume"/>
         <div className='card__hover'>
             <span className='card__name'>{name}</span>
-            <button className='card__watch'>Посмотреть</button>
+            <button
+                className='card__watch'
+                onClick={e => {
+                    e.preventDefault();
+                    setIsModal(!isModal)
+                }}>Посмотреть
+            </button>
         </div>
+
+        {isModal && <Modal/>}
     </div>
 }

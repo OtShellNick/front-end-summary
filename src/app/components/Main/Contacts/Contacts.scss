@@ -1,0 +1,64 @@
+@import "src/app/main";
+
+.contact {
+  height: 100%;
+  background-color: $bodyBackground;
+  background-image: url("./assets/background-contacts.svg");
+  background-repeat: no-repeat;
+  background-position: 90% 50%;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 12vh 3vw;
+  }
+
+  &__heading {
+    color: $white;
+    font-size: $font34;
+    line-height: 48px;
+    font-weight: 600;
+    padding: 0 60% 0 0;
+    margin-bottom: 4vh;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 55%;
+    height: 65%;
+  }
+
+  &__input {
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: $gray;
+    border-radius: 10px;
+    color: $white;
+    font-weight: 400;
+    font-size: $font16;
+
+    &::placeholder {
+      color: $white;
+      font-weight: 400;
+      font-size: $font16;
+    }
+  }
+
+  &__send {
+    width: 123px;
+    border-radius: 10px;
+    border: 1px solid $orange;
+    padding: 8px 15px;
+    color: $white;
+    font-size: $font16;
+    font-weight: 500;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $hover;
+    }
+  }
+}

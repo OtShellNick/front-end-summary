@@ -1,0 +1,24 @@
+@import "src/app/main";
+
+.main__footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  padding: 3vh 3vw;
+  background-color: transparent;
+
+  &__text {
+    font-weight: 400;
+    font-size: $font16;
+    color: rgba(220, 220, 220, 0.6);
+  }
+
+  &__designer {
+    text-decoration: none;
+    color: $orange;
+
+    &:hover {
+      color: $hover;
+    }
+  }
+}

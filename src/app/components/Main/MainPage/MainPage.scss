@@ -34,6 +34,7 @@
     border: 2px solid $orange;
     border-radius: 10px;
     cursor: pointer;
+    background-color: transparent;
 
     &:hover {
       background: linear-gradient(90.06deg, rgba(255, 160, 27, 0.2) 0.71%, rgba(255, 255, 255, 0.2) 49.45%, rgba(255, 160, 27, 0.2) 99.96%), $orange;

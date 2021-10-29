@@ -8,28 +8,8 @@ interface IProjects {
 
 export const PROJECTS: Array<IProjects> = [
     {
-        name: 'Test',
-        tags: ['test', 'test1'],
-        img: resume
-    },
-    {
-        name: 'Test2',
-        tags: ['test2', 'test1'],
-        img: resume
-    },
-    {
-        name: 'Test3',
-        tags: ['test3', 'test1'],
-        img: resume
-    },
-    {
-        name: 'Test4',
-        tags: ['test4', 'test1'],
-        img: resume
-    },
-    {
-        name: 'Test5',
-        tags: ['test3', 'test1'],
+        name: 'Резюме',
+        tags: ['html', 'rjs'],
         img: resume
     },
 ]

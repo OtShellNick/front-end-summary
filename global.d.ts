@@ -6,6 +6,7 @@ declare module 'classnames';
 declare module "react-router-dom";
 declare module "redux";
 declare module "@reduxjs/toolkit";
+declare module "axios";
 
 declare module "*.svg?tsx" {
     const content: any;
