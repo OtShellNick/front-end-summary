@@ -35,12 +35,12 @@
     color: $white;
 
     &_name {
-      font-size: 18px;
+      font-size: $font18;
       line-height: 22px;
     }
 
     &_prof {
-      font-size: 18px;
+      font-size: $font18;
       line-height: 22px;
       font-weight: 600;
     }

@@ -4,7 +4,7 @@
   padding: 3vh 2vw;
 
   &__heading {
-    font-size: 34px;
+    font-size: $font34;
     font-weight: 600;
     padding-right: 28vw;
     margin-bottom: 24px;
@@ -12,7 +12,7 @@
   }
 
   &__description {
-    font-size: 16px;
+    font-size: $font16;
     font-weight: 400;
     color: $white;
     margin-bottom: 65px;
@@ -43,6 +43,77 @@
       &_description {
         font-weight: 400;
       }
+    }
+  }
+
+  &__skills {
+    margin-bottom: 9vh;
+
+    &_heading {
+      font-size: $font34;
+      font-weight: 600;
+      padding-right: 28vw;
+      margin-bottom: 24px;
+      color: $white;
+    }
+
+    &_list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      padding: 0;
+
+      &_item {
+        width: 15vw;
+        margin-bottom: 40px;
+        background-image: url("./assets/skills.svg");
+        background-repeat: no-repeat;
+        background-position: left;
+
+        & > span {
+          margin-left: 45px;
+        }
+      }
+    }
+  }
+
+  &__experience {
+    margin-bottom: 9vh;
+
+    &_heading {
+      font-size: $font34;
+      font-weight: 600;
+      padding-right: 28vw;
+      margin-bottom: 24px;
+      color: $white;
+    }
+
+    &_description {
+      font-size: $font16;
+      line-height: 24px;
+      color: $white;
+
+    }
+  }
+
+  &__education {
+
+    &_heading {
+      font-size: $font34;
+      font-weight: 600;
+      padding-right: 28vw;
+      margin-bottom: 24px;
+      color: $white;
+    }
+
+    &_subheading {
+
+    }
+
+    &_description {
+      font-size: $font16;
+      line-height: 24px;
+      color: $white;
     }
   }
 }

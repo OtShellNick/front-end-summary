@@ -8,6 +8,8 @@ import IconFonts from './assets/font.svg?tsx';
 import IconMobile from './assets/mobile.svg?tsx';
 import IconProgressive from './assets/progressive.svg?tsx';
 import IconSeo from './assets/seo.svg?tsx';
+import IconSkillBox from './assets/Skillbox.svg?tsx';
+import IconGeekbrains from './assets/geekbrains.svg?tsx';
 
 export const About = () => {
     return <section className='about'>
@@ -16,7 +18,7 @@ export const About = () => {
             нравится узнавать новое,
             искать нестандартные подходы к решению задач и реализовывать идеи в виде сайтов.<br/>
             Моя профессия дает мне возможность узнавать новое каждый день и не стоять на месте.</p>
-        <div className='about__i-can'>
+        <section className='about__i-can'>
             <h2 className='about__heading'>Вот что я могу</h2>
             <ul className='about__i-can__list'>
                 <li className='about__i-can__item'>
@@ -71,48 +73,58 @@ export const About = () => {
                     </p>
                 </li>
             </ul>
-        </div>
-        <div>
-            <h2>Ключевые навыки</h2>
-            <ul>
-                <li>
-
+        </section>
+        <section className='about__skills'>
+            <h2 className='about__skills_heading'>Ключевые навыки</h2>
+            <ul className='about__skills_list'>
+                <li className='about__skills_list_item'>
+                    <span>HTML и CSS</span>
                 </li>
-                <li>
-
+                <li className='about__skills_list_item'>
+                    <span>SCSS</span>
                 </li>
-                <li>
-
+                <li className='about__skills_list_item'>
+                    <span>JavaScript</span>
                 </li>
-                <li>
-
+                <li className='about__skills_list_item'>
+                    <span>NodeJS</span>
                 </li>
-                <li>
-
+                <li className='about__skills_list_item'>
+                    <span>Bootstrap</span>
                 </li>
-                <li>
-
+                <li className='about__skills_list_item'>
+                    <span>React</span>
                 </li>
-                <li>
-
+                <li className='about__skills_list_item'>
+                    <span>Redux</span>
                 </li>
-                <li>
-
+                <li className='about__skills_list_item'>
+                    <span>Git</span>
+                </li>
+                <li className='about__skills_list_item'>
+                    <span>NPM</span>
+                </li>
+                <li className='about__skills_list_item'>
+                    <span>WebPack</span>
                 </li>
             </ul>
-        </div>
-        <div>
-            <h2>Опыт работы</h2>
-            <p>В настоящее время работаю в компании Sobix. Работаю над разработкой CRM системы для управления
+        </section>
+        <section className='about__experience'>
+            <h2 className='about__experience_heading'>Опыт работы</h2>
+            <p className='about__experience_description'>В настоящее время работаю в компании Sobix. Работаю над разработкой CRM системы для управления
                 поставленными задачами, схожей с Trello, работаю над автоматизацией процессов с использованием Work
                 Flow. </p>
-        </div>
-        <div>
-            <h2>Обучение</h2>
-            <h3>SkillBox</h3>
-            <p>Профессия: <span>Front-and разработчик PRO</span></p>
-            <h3>GeekBrains</h3>
-            <p>Профессия: <span>Front-end разработчик PRO</span></p>
-        </div>
+        </section>
+        <section className='about__education'>
+            <h2 className='about__education_heading'>Обучение</h2>
+            <h3 className='about__education_subheading'>
+                <IconSkillBox/>
+            </h3>
+            <p className='about__education_description'>Профессия: <span>Front-and разработчик PRO</span></p>
+            <h3 className='about__education_subheading'>
+                <IconGeekbrains/>
+            </h3>
+            <p className='about__education_description'>Профессия: <span>Front-end разработчик PRO</span></p>
+        </section>
     </section>
 }

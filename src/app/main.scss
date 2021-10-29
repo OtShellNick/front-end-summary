@@ -10,12 +10,25 @@ $brown: #9F7133;
 $white: #DCDCDC;
 $hover: #E88700;
 
+$font14: .7rem;
+$font16: .8rem;
+$font18: 1rem;
+$font24: 1.3rem;
+$font34: 1.8rem;
+$font54: 3rem;
+
 body {
   font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
   background-color: $bodyBackground;
   box-sizing: border-box;
 }
 
 #root {
   display: flex;
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }

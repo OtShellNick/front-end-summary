@@ -11,9 +11,9 @@
   background-position: center 55vh;
 
   &__heading {
-    width: 36vw;
+    width: 45vw;
     margin-bottom: 5vh;
-    font-size: 54px;
+    font-size: $font54;
     line-height: 70px;
     font-weight: 700;
     text-align: center;
@@ -21,7 +21,7 @@
   }
 
   &__description {
-    font-size: 24px;
+    font-size: $font24;
     margin-bottom: 5vh;
     color: $white;
   }
@@ -29,7 +29,7 @@
   &__my-works {
     padding: 16px 50px;
     color: $white;
-    font-size: 24px;
+    font-size: $font24;
     font-weight: 500;
     border: 2px solid $orange;
     border-radius: 10px;
