@@ -1,6 +1,12 @@
+@import "src/helpers/size-page";
+
 .main {
   height: 100vh;
   width: 75%;
   position: absolute;
   right: 0;
+
+  @include size-page('tablet-big-max') {
+    width: 85%;
+  }
 }

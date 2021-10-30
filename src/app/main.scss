@@ -17,7 +17,7 @@ $font24: 1.3rem;
 $font34: 1.8rem;
 $font54: 3rem;
 
-body {
+html {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   background-color: $bodyBackground;
@@ -35,4 +35,10 @@ body {
 
 button {
   transition-duration: .2s;
+}
+
+@media all and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
 }

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 import * as classnames from "classnames";
 
 import './Works.scss';
@@ -48,7 +48,7 @@ export const Works = () => {
             </ul>
         </nav>
         <main className='works__projects'>
-            {PROJECTS.filter(project => activeTab === 'all' ? project : project.tags.includes(activeTab)).map(project => <ProjectCard name={project.name} tags={project.tags} img={project.img}/>)}
+            {PROJECTS.filter(project => activeTab === 'all' ? project : project.tags.includes(activeTab)).map(project => <ProjectCard key={Math.random().toString(24)} name={project.name} tags={project.tags} img={project.img}/>)}
         </main>
     </section>
 }
