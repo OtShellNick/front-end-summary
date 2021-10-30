@@ -1,4 +1,5 @@
 @import "src/helpers/size-page";
+@import "src/app/main";
 
 .main {
   height: 100vh;
@@ -6,7 +7,20 @@
   position: absolute;
   right: 0;
 
+  &__show {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    border-radius: 50%;
+    top: 20px;
+    left: -10px;
+
+    & > svg {
+      fill: $white;
+    }
+  }
+
   @include size-page('tablet-big-max') {
-    width: 85%;
+    width: 100%;
   }
 }
