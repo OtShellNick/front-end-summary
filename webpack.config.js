@@ -36,7 +36,7 @@ const jsLoaders = () => {
 
     return loaders
 }
-const filename = ext => IsDev ? `[name].${ext}` : `[name].[hash].${ext}`
+const filename = ext => IsDev ? `[name].${ext}` : `[name].[contenthash].${ext}`
 
 
 const plugins = () => {
@@ -90,6 +90,9 @@ module.exports = {
         path: path.resolve(__dirname, './build'),
         filename: "[name].bundle.js"
     },
+    optimization: {
+        runtimeChunk: 'single',
+    },
     resolve: {
         extensions: ['.js', '.json', '.png', '.jsx', '.ts', '.tsx', '.scss'],
         alias: {
@@ -133,7 +136,7 @@ module.exports = {
                 test: /\.(jpe?g|png|gif)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'img/[hash][ext]'
+                    filename: 'img/[contenthash][ext]'
                 }
             },
             {

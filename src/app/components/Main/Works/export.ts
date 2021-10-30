@@ -1,0 +1,1 @@
+export {Works as default} from "@components/Main/Works/Works";

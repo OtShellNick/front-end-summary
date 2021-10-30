@@ -1,4 +1,5 @@
 @import "src/app/main";
+@import "src/helpers/size-page";
 
 .contact {
   height: 100%;
@@ -20,6 +21,8 @@
     font-weight: 600;
     padding: 0 60% 0 0;
     margin-bottom: 4vh;
+
+    @include size-page('')
   }
 
   &__form {

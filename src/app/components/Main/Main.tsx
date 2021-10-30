@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 
 import './Main.scss';
 
-import {MainPage} from "@components/Main/MainPage/MainPage";
-import {About} from "@components/Main/About/About";
-import {Works} from "@components/Main/Works/Works";
-import {Contacts} from "@components/Main/Contacts/Contacts";
+const MainPage = lazy(() => import("@components/Main/MainPage/export"));
+const About = lazy(() => import("@components/Main/About/export"));
+const Works = lazy(() => import("@components/Main/Works/export"));
+const Contacts = lazy(() => import("@components/Main/Contacts/export"));
 
 import IconShow from './assets/aside-open.svg?tsx';
 
@@ -24,9 +24,11 @@ export const Main = ({ activeTab, setMenu, setAside, stateAside }: IProps) => {
         }}>
             <IconShow/>
         </div>
-        {activeTab === 'main' && <MainPage setMenu={setMenu}/>}
-        {activeTab === 'about' && <About/>}
-        {activeTab === 'works' && <Works/>}
-        {activeTab === 'contacts' && <Contacts/>}
+        <Suspense fallback={<div>Loading</div>}>
+            {activeTab === 'main' && <MainPage setMenu={setMenu}/>}
+            {activeTab === 'about' && <About/>}
+            {activeTab === 'works' && <Works/>}
+            {activeTab === 'contacts' && <Contacts/>}
+        </Suspense>
     </main>
 }
