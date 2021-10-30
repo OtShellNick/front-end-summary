@@ -1,4 +1,5 @@
 @import "src/app/main";
+@import "src/helpers/size-page";
 
 .aside {
   position: fixed;
@@ -8,4 +9,8 @@
   height: 100vh;
   width: 25%;
   background-color: $black;
+
+  @include size-page('tablet-big-max') {
+    width: 15%;
+  }
 }

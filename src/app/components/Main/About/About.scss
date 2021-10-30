@@ -1,4 +1,5 @@
 @import "src/app/main";
+@import "src/helpers/size-page";
 
 .about {
   padding: 3vh 2vw;
@@ -28,8 +29,7 @@
     }
 
     &__item {
-      width: 16vw;
-      margin-right: 2vw;
+      width: 300px;
       padding: 24px 40px 24px 0;
 
       &_img {
@@ -64,7 +64,7 @@
       padding: 0;
 
       &_item {
-        width: 15vw;
+        width: 150px;
         margin-bottom: 40px;
         background-image: url("./assets/skills.svg");
         background-repeat: no-repeat;

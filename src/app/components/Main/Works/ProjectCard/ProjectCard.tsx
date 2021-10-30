@@ -27,6 +27,6 @@ export const ProjectCard = ({name, tags, img}: IProjectCardProps) => {
             </button>
         </div>
 
-        {isModal && <Modal/>}
+        {isModal && <Modal onClose={() => setIsModal(false)}/>}
     </div>
 }

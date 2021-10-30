@@ -30,11 +30,11 @@ export const Footer = () => {
                     </li>
                 </ul>
             </li>
-            <li className='footer__list_item'>
+            <li className='footer__list_item footer__list_item_contacts'>
                 <IconTel/>
                 <a href="tel:+79782362326">+79782362326</a>
             </li>
-            <li className='footer__list_item'>
+            <li className='footer__list_item footer__list_item_contacts'>
                 <IconMail/>
                 <a className='link mail__link' href={`mailto:otshellnick@yandex.ru`}>otshellnick@yandex.ru</a>
             </li>
