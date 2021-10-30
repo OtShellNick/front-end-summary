@@ -13,6 +13,9 @@
 
     &_item {
 
+      &:hover > a{
+        color: $hover;
+      }
     }
 
     &_item > a {

@@ -1,6 +1,7 @@
 *.log
 npm-debug.log*
 CNAME
+gh-pages.js
 
 # Runtime data
 pids

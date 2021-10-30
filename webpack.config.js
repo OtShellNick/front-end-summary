@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const IsDev = process.env.NODE_ENV === 'development';
 
@@ -41,7 +42,24 @@ const filename = ext => IsDev ? `[name].${ext}` : `[name].[hash].${ext}`
 const plugins = () => {
     return [
         new HTMLWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            favicon: "./src/assets/briefcase.svg"
+        }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, './src/assets/CNAME'),
+                    to: path.resolve(__dirname, './build')
+                },
+                {
+                    from: path.resolve(__dirname, './src/assets/robots.txt'),
+                    to: path.resolve(__dirname, './build')
+                },
+                {
+                    from: path.resolve(__dirname, './src/assets/briefcase.svg'),
+                    to: path.resolve(__dirname, './build')
+                },
+            ]
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
