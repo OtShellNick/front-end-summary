@@ -17,9 +17,10 @@ interface IProps {
 }
 
 export const Main = ({ activeTab, setMenu, setAside, stateAside }: IProps) => {
+    const deviceWidth = window.screen.width;
     return <main className='main'>
         <div className='main__show' onClick={() => setAside('open')} style={{
-            display: stateAside ? 'none' : 'flex'
+            display: (deviceWidth > 800 && stateAside) ? 'none' : 'flex',
         }}>
             <IconShow/>
         </div>

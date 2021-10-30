@@ -24,12 +24,22 @@
     font-weight: 700;
     text-align: center;
     color: $white;
+
+    @include size-page('tablet-big-max') {
+      width: 90vw;
+      font-size: $font34;
+      line-height: 50px;
+    }
   }
 
   &__description {
     font-size: $font24;
     margin-bottom: 5vh;
     color: $white;
+
+    @include size-page('tablet-big-max') {
+      padding: 0 30px;
+    }
   }
 
   &__my-works {

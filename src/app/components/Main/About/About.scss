@@ -4,6 +4,10 @@
 .about {
   padding: 3vh 2vw;
 
+  @include size-page('tablet-big-max') {
+    padding: 3vh 5vw;
+  }
+
   &__heading {
     font-size: $font34;
     font-weight: 600;
