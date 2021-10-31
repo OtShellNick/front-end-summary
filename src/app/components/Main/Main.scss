@@ -8,14 +8,14 @@
   right: 0;
 
   &__show {
-    width: 25px;
-    height: 25px;
     position: absolute;
     border-radius: 50%;
     top: 10px;
     left: 10px;
 
     & > svg {
+      width: 30px;
+      height: 30px;
       fill: $white;
     }
   }

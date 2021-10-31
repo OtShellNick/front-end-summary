@@ -1,13 +1,18 @@
 import React, {useRef, useEffect} from "react";
+import ReactDOM from "react-dom";
 
 import './Modal.scss';
-import ReactDOM from "react-dom";
+
+import IconClose from './assets/x-lg.svg?tsx';
 
 interface IModalProps {
     onClose: () => void;
+    name: string;
+    img: string;
+    description: string
 }
 
-export const Modal = ({ onClose }: IModalProps) => {
+export const Modal = ({ onClose, name, img, description }: IModalProps) => {
     const modal = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -37,7 +42,10 @@ export const Modal = ({ onClose }: IModalProps) => {
 
     return ReactDOM.createPortal(<div className='modal__wrapper'>
         <div ref={modal} className='modal__root'>
-            Modal
+            <IconClose className='modal__close' onClick={onClose}/>
+            <img className='modal__img' src={img} alt={name}/>
+            <h1 className='modal__heading'>{`Название проекта: ${name}`}</h1>
+            {description && <p>{`Описание проекта: ${description}`}</p>}
         </div>
     </div>, node);
 }

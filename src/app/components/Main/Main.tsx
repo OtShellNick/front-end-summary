@@ -25,12 +25,11 @@ export const Main = ({ activeTab, setMenu, setAside, stateAside }: IProps) => {
         }}>
             <IconShow/>
         </div>
-        <Preloader/>
-        {/*<Suspense fallback={<Preloader/>}>*/}
-        {/*    {activeTab === 'main' && <MainPage setMenu={setMenu}/>}*/}
-        {/*    {activeTab === 'about' && <About/>}*/}
-        {/*    {activeTab === 'works' && <Works/>}*/}
-        {/*    {activeTab === 'contacts' && <Contacts/>}*/}
-        {/*</Suspense>*/}
+        <Suspense fallback={<Preloader/>}>
+            {activeTab === 'main' && <MainPage setMenu={setMenu}/>}
+            {activeTab === 'about' && <About/>}
+            {activeTab === 'works' && <Works/>}
+            {activeTab === 'contacts' && <Contacts/>}
+        </Suspense>
     </main>
 }
