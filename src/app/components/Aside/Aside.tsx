@@ -17,11 +17,10 @@ interface IProps {
 export const Aside = ( { setMenu, activeTab, setAside, stateAside }: IProps) => {
     const aside = useRef<HTMLDivElement>(null);
     const deviceWidth = window.screen.width;
-    const card = document.querySelector('.card');
 
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
-            if (card && deviceWidth < 800 && stateAside && e.target instanceof Node && !aside.current?.contains(e.target)) {
+            if (deviceWidth < 800 && stateAside && e.target instanceof Node && !aside.current?.contains(e.target)) {
                 setAside('close');
             }
         }

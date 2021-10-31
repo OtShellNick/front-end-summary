@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 
 import './Main.scss';
 
+import {Preloader} from "@components/Preloader/Preloader";
 const MainPage = lazy(() => import("@components/Main/MainPage/export"));
 const About = lazy(() => import("@components/Main/About/export"));
 const Works = lazy(() => import("@components/Main/Works/export"));
@@ -24,11 +25,12 @@ export const Main = ({ activeTab, setMenu, setAside, stateAside }: IProps) => {
         }}>
             <IconShow/>
         </div>
-        <Suspense fallback={<div>Loading</div>}>
-            {activeTab === 'main' && <MainPage setMenu={setMenu}/>}
-            {activeTab === 'about' && <About/>}
-            {activeTab === 'works' && <Works/>}
-            {activeTab === 'contacts' && <Contacts/>}
-        </Suspense>
+        <Preloader/>
+        {/*<Suspense fallback={<Preloader/>}>*/}
+        {/*    {activeTab === 'main' && <MainPage setMenu={setMenu}/>}*/}
+        {/*    {activeTab === 'about' && <About/>}*/}
+        {/*    {activeTab === 'works' && <Works/>}*/}
+        {/*    {activeTab === 'contacts' && <Contacts/>}*/}
+        {/*</Suspense>*/}
     </main>
 }
