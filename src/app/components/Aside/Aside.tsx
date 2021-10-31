@@ -17,7 +17,7 @@ interface IProps {
 export const Aside = ( { setMenu, activeTab, setAside, stateAside }: IProps) => {
     return <aside className={classNames(stateAside ? 'aside' : 'aside__closed')}>
         <Header onClose={() => setAside('close')} isOpen={stateAside}/>
-        {stateAside && <Menu setMenu={setMenu} activeTab={activeTab}/>}
+        {stateAside && <Menu setMenu={setMenu} activeTab={activeTab} setAside={setAside}/>}
         {stateAside && <Footer/>}
     </aside>
 }

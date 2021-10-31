@@ -3,7 +3,7 @@ import React from "react";
 import './Header.scss';
 
 import ava from '@components/Aside/components/Header/assets/ava.png';
-import IconShow from './assets/aside-open.svg?tsx';
+import IconShow from './assets/x-lg.svg?tsx';
 
 interface IHeaderProps {
     isOpen: boolean

@@ -1,10 +1,7 @@
 @import "src/app/main";
 
 .main__footer {
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  padding: 3vh 3vw;
+  padding: 3vh 0;
   background-color: transparent;
 
   &__text {

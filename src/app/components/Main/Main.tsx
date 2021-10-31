@@ -7,7 +7,7 @@ const About = lazy(() => import("@components/Main/About/export"));
 const Works = lazy(() => import("@components/Main/Works/export"));
 const Contacts = lazy(() => import("@components/Main/Contacts/export"));
 
-import IconShow from './assets/aside-open.svg?tsx';
+import IconShow from './assets/list.svg?tsx';
 
 interface IProps {
     activeTab: string,

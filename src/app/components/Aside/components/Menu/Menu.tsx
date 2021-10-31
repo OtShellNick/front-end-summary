@@ -7,18 +7,18 @@ import {MainPage} from "@components/Main/MainPage/MainPage";
 import {About} from "@components/Main/About/About";
 
 interface IMenuList {
-    tag: string,
-    title: string,
-    cmp: React.ReactNode
+    tag: string;
+    title: string;
+    cmp: React.ReactNode;
 }
 
 interface IProps {
-    setMenu: (a: string) => void,
-    activeTab: string
+    setMenu: (a: string) => void;
+    setAside: (e: string) => void;
+    activeTab: string;
 }
 
-export const Menu = ( props: IProps) => {
-    const { setMenu, activeTab } = props;
+export const Menu = ({setMenu, setAside, activeTab}: IProps) => {
 
     const menu: Array<IMenuList> = [
         {
@@ -51,7 +51,10 @@ export const Menu = ( props: IProps) => {
                     'menu__list_item': true,
                     'menu__list_item__active': activeTab === item.tag
                 })}
-                onClick={() => setMenu(item.tag)}>
+                onClick={() => {
+                    setMenu(item.tag);
+                    setAside('close')
+                }}>
                 {item.title}
             </li>
         })}

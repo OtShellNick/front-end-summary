@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, { useState} from "react";
 
 import './Contacts.scss';
 import {sendMessage} from "@/app/actions/tsend";
@@ -37,7 +37,7 @@ export const Contacts = () => {
                     className='contact__send'>Отправить
                 </button>
             </form>
+            <Footer/>
         </div>
-        <Footer/>
     </section>
 }
