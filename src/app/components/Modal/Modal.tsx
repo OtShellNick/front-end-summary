@@ -12,7 +12,6 @@ export const Modal = ({ onClose }: IModalProps) => {
 
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
-            console.log(e.target)
             if (e.target instanceof Node && !modal.current?.contains(e.target)) {
                 onClose();
             }

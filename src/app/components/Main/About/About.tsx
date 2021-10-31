@@ -107,6 +107,9 @@ export const About = () => {
                 <li className='about__skills_list_item'>
                     <span>WebPack</span>
                 </li>
+                <li className='about__skills_list_item'>
+                    <span>Type Script</span>
+                </li>
             </ul>
         </section>
         <section className='about__experience'>

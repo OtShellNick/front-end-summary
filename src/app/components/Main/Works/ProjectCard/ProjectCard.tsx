@@ -11,10 +11,11 @@ interface IProjectCardProps {
 }
 
 export const ProjectCard = ({name, tags, img}: IProjectCardProps) => {
+    const deviceWidth = window.screen.width;
     const [isModal, setIsModal] = useState(false);
 
     console.log(img)
-    return <div className='card'>
+    return <div className='card' onClick={() => deviceWidth < 800 && setIsModal(!isModal)}>
         <img className='card__img' src={img} alt="resume"/>
         <div className='card__hover'>
             <span className='card__name'>{name}</span>
