@@ -19,6 +19,7 @@ interface IProps {
 }
 
 export const Menu = ({setMenu, setAside, activeTab}: IProps) => {
+    const deviceWidth = window.screen.width;
 
     const menu: Array<IMenuList> = [
         {
@@ -53,7 +54,7 @@ export const Menu = ({setMenu, setAside, activeTab}: IProps) => {
                 })}
                 onClick={() => {
                     setMenu(item.tag);
-                    setAside('close')
+                    deviceWidth < 800 && setAside('close')
                 }}>
                 {item.title}
             </li>

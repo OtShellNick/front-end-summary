@@ -15,7 +15,7 @@ export const ProjectCard = ({name, tags, img}: IProjectCardProps) => {
 
     console.log(img)
     return <div className='card'>
-        <img src={img} alt="resume"/>
+        <img className='card__img' src={img} alt="resume"/>
         <div className='card__hover'>
             <span className='card__name'>{name}</span>
             <button
