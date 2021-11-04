@@ -1,18 +1,22 @@
 import React, {Suspense, lazy, useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
 import './Main.scss';
 
 import {Preloader} from "@components/Preloader/Preloader";
+
 const MainPage = lazy(() => import("@components/Main/MainPage/export"));
 const About = lazy(() => import("@components/Main/About/export"));
 const Works = lazy(() => import("@components/Main/Works/export"));
 const Contacts = lazy(() => import("@components/Main/Contacts/export"));
 
 import IconShow from './assets/list.svg?tsx';
-import {useDispatch, useSelector} from "react-redux";
+import IconMail from './assets/mail.svg?tsx';
+import IconPhone from './assets/phone.svg?tsx';
+
+import {setAsideActionCreator} from "@/actions/setAsideAction";
+import {setDeviceWidthAction} from "@/actions/setDeviceWidthAction";
 import {IInitialState} from "../../../store/store";
-import {setAsideActionCreator} from "../../../actions/setAsideAction";
-import {setDeviceWidthAction} from "../../../actions/setDeviceWidthAction";
 
 export const Main = () => {
     const deviceWidth = window.screen.width;
@@ -25,10 +29,22 @@ export const Main = () => {
     }, [deviceWidth])
 
     return <main className='main'>
-        <div className='main__show' onClick={() => dispatch(setAsideActionCreator(true))} style={{
+        <div className='main__show' style={{
             display: (deviceWidth > 800 && asideMenu) ? 'none' : 'flex',
         }}>
-            <IconShow/>
+            <IconShow onClick={() => dispatch(setAsideActionCreator(true))}/>
+            <ul className='main__show_contacts-list'>
+                <li>
+                    <a href="tel:+79782362326">
+                        <IconMail/>
+                    </a>
+                </li>
+                <li>
+                    <a className='link mail__link' href={`mailto:otshellnick@yandex.ru`}>
+                        <IconPhone/>
+                    </a>
+                </li>
+            </ul>
         </div>
         <Suspense fallback={<Preloader/>}>
             {activeMenu === 'main' && <MainPage/>}

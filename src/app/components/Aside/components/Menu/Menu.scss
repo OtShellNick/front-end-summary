@@ -1,4 +1,5 @@
 @import "src/app/main";
+@import "src/helpers/size-page";
 
 li {
   color: $white;
@@ -25,6 +26,11 @@ li {
       background-image: url("./assets/active_menu.svg");
       background-repeat: no-repeat;
       background-position: right;
+
+      @include size-page('tablet-big-max') {
+        background: none;
+        border: none;
+      }
     }
   }
 }

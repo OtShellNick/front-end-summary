@@ -47,6 +47,14 @@ export const Works = () => {
                 </li>)}
             </ul>
         </nav>
+        <div className='works__mobile'>
+            <span className='works__mobile_text'>Фильтровать:</span>
+            <select className='works__mobile_select' value={activeTab} onChange={e => setActiveTab(e.target.value)}>
+                {NAV.map(option => {
+                    return <option key={Math.random().toString(24)} value={option.key}>{option.title}</option>
+                })}
+            </select>
+        </div>
         <main className='works__projects'>
             {PROJECTS.filter(project => activeTab === 'all' ? project : project.tags.includes(activeTab)).map(project => <ProjectCard key={Math.random().toString(24)} name={project.name} tags={project.tags} img={project.img}/>)}
         </main>

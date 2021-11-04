@@ -1,8 +1,15 @@
 @import "src/app/main";
+@import "src/helpers/size-page";
 
 .main__footer {
-  padding: 3vh 0;
+  display: flex;
+  justify-content: space-between;
+  padding:  0;
   background-color: transparent;
+
+  @include size-page('tablet-big-max') {
+    display: none;
+  }
 
   &__text {
     font-weight: 400;

@@ -30,13 +30,16 @@ export const Footer = () => {
                     </li>
                 </ul>
             </li>
-            {/*<li className='footer__list_item footer__list_item_contacts'>*/}
-            {/*    <IconTel/>*/}
-            {/*    <a href="tel:+79782362326">+79782362326</a>*/}
-            {/*</li>*/}
+            <li className='footer__list_item footer__list_item_contacts'>
+                <IconTel/>
+                <a href="tel:+79782362326">+79782362326</a>
+            </li>
             <li className='footer__list_item footer__list_item_contacts'>
                 <IconMail/>
                 <a className='link mail__link' href={`mailto:otshellnick@yandex.ru`}>otshellnick@yandex.ru</a>
+            </li>
+            <li className='footer__list_item footer__list_item_copyright'>
+                <span className='footer__list_item_copyright__text'>2021 Designed by: <a className='footer__list_item_copyright__designer' href="tg://resolve?domain=@k_orlova_8888">Екатерина Орлова</a></span>
             </li>
         </ul>
     </footer>

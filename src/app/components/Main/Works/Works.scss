@@ -1,7 +1,12 @@
 @import "src/app/main";
+@import "src/helpers/size-page";
 
 .works {
   padding: 7vh 5vw;
+
+  @include size-page('tablet-big-max') {
+    padding: 13vh 7vw;
+  }
 
   &__heading {
     font-size: $font34;
@@ -12,6 +17,10 @@
   }
 
   &__nav {
+
+    @include size-page('tablet-big-max') {
+      display: none;
+    }
 
     &_list {
       display: flex;
@@ -33,5 +42,29 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  &__mobile {
+    display: none;
+
+    @include size-page('tablet-big-max') {
+      display: flex;
+      margin-bottom: 5vh;
+    }
+
+    &_text {
+      color: $white;
+      font-size: $font18;
+      margin-right: $font16;
+    }
+
+    &_select {
+      width: 52vw;
+      padding: 3px 10px 6px;
+      box-sizing: border-box;
+      border: 1px solid $gray;
+      background-color: $bodyBackground;
+      color: $white;
+    }
   }
 }

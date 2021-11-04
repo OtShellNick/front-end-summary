@@ -12,8 +12,9 @@
   background-position: center 55vh;
 
   @include size-page('tablet-big-max') {
-    background-size: 50%;
-    background-position: center 75vh;
+    padding-top: 13vh;
+    background-size: 80%;
+    background-position: center 65vh;
   }
 
   &__heading {

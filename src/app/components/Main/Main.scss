@@ -18,6 +18,19 @@
       height: 30px;
       fill: $white;
     }
+
+    &_contacts-list {
+      display: flex;
+      position: absolute;
+      left: 67vw;
+
+      & > li {
+
+        &:not(:last-child) {
+          margin-right: 5vw;
+        }
+      }
+    }
   }
 
   @include size-page('tablet-big-max') {

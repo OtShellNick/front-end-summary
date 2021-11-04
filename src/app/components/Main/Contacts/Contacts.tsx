@@ -37,6 +37,7 @@ export const Contacts = () => {
                     className='contact__send'>Отправить
                 </button>
             </form>
+            <hr/>
             <Footer/>
         </div>
     </section>

@@ -8,7 +8,7 @@ import {Footer} from "@components/Aside/components/Footer/Footer";
 import classNames from "classnames";
 import {useDispatch, useSelector} from "react-redux";
 import {IInitialState} from "../../../store/store";
-import {setAsideActionCreator} from "../../../actions/setAsideAction";
+import {setAsideActionCreator} from "@/actions/setAsideAction";
 
 export const Aside = () => {
     const aside = useRef<HTMLDivElement>(null);
@@ -19,7 +19,8 @@ export const Aside = () => {
 
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
-            if (deviceWidth < 800 && !asideMenu && e.target instanceof Node && !aside.current?.contains(e.target)) {
+            if (deviceWidth < 800 && asideMenu && e.target instanceof Node && !aside.current?.contains(e.target)) {
+                console.log(deviceWidth < 800)
                 dispatch(setAsideActionCreator(false));
             }
         }
@@ -27,7 +28,7 @@ export const Aside = () => {
         document.addEventListener('click', handleClick);
 
         return () => document.removeEventListener('click', handleClick)
-    }, [asideMenu])
+    }, [asideMenu, deviceWidth])
     return <aside ref={aside} className={classNames(asideMenu ? 'aside' : 'aside__closed')}>
         <Header onClose={() => dispatch(setAsideActionCreator(false))} isOpen={asideMenu}/>
         {asideMenu && <Menu activeTab={activeMenu}/>}

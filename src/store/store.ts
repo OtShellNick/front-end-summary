@@ -12,7 +12,7 @@ export interface IInitialState {
 const initialState: IInitialState = {
     activeMenu: 'main',
     deviceWidth: 0,
-    asideMenu: true
+    asideMenu: window.screen.width > 800
 }
 
 export const rootReducer: Reducer<IInitialState> = (state = initialState, action) => {
