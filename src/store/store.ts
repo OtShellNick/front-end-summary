@@ -1,32 +1,40 @@
-interface IStore {
-    type: string
+import {Reducer} from "redux";
+import {SET_MENU} from "@/actions/setMenuAction";
+import {SET_ASIDE} from "../actions/setAsideAction";
+import {SET_WIDTH} from "../actions/setDeviceWidthAction";
+
+export interface IInitialState {
+    activeMenu: string;
+    deviceWidth: number;
+    asideMenu: boolean;
 }
 
-export const StoreMenu = (state = 'main', action: IStore) => {
-
-    switch (action.type) {
-        case 'about':
-            return 'about';
-        case 'works':
-            return 'works';
-        case 'contacts':
-            return 'contacts';
-        default:
-            return 'main'
-    }
+const initialState: IInitialState = {
+    activeMenu: 'main',
+    deviceWidth: 0,
+    asideMenu: true
 }
 
-const deviceWidth  = window.screen.width;
-
-export const StoreAside = (state = deviceWidth > 800, action: IStore) => {
-    const {type} = action;
+export const rootReducer: Reducer<IInitialState> = (state = initialState, action) => {
+    const {type, activeMenu, asideMenu, deviceWidth} = action;
 
     switch (type) {
-        case 'open':
-            return true
-        case 'close':
-            return false
+        case SET_MENU:
+            return {
+                ...state,
+                activeMenu
+            }
+        case SET_ASIDE:
+            return {
+                ...state,
+                asideMenu
+            }
+        case SET_WIDTH:
+            return {
+                ...state,
+                deviceWidth
+            }
         default:
-            return deviceWidth > 800
+            return state;
     }
 }

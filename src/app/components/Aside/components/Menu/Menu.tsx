@@ -5,6 +5,10 @@ import './Menu.scss';
 
 import {MainPage} from "@components/Main/MainPage/MainPage";
 import {About} from "@components/Main/About/About";
+import {useDispatch, useSelector} from "react-redux";
+import {IInitialState} from "../../../../../store/store";
+import {setMenuActionCreator} from "../../../../../actions/setMenuAction";
+import {setAsideActionCreator} from "../../../../../actions/setAsideAction";
 
 interface IMenuList {
     tag: string;
@@ -13,13 +17,12 @@ interface IMenuList {
 }
 
 interface IProps {
-    setMenu: (a: string) => void;
-    setAside: (e: string) => void;
     activeTab: string;
 }
 
-export const Menu = ({setMenu, setAside, activeTab}: IProps) => {
-    const deviceWidth = window.screen.width;
+export const Menu = ({activeTab}: IProps) => {
+    const deviceWidth = useSelector<IInitialState, number>(state => state.deviceWidth);
+    const dispatch = useDispatch();
 
     const menu: Array<IMenuList> = [
         {
@@ -53,8 +56,8 @@ export const Menu = ({setMenu, setAside, activeTab}: IProps) => {
                     'menu__list_item__active': activeTab === item.tag
                 })}
                 onClick={() => {
-                    setMenu(item.tag);
-                    deviceWidth < 800 && setAside('close')
+                    dispatch(setMenuActionCreator(item.tag));
+                    deviceWidth < 800 && dispatch(setAsideActionCreator(false));
                 }}>
                 {item.title}
             </li>

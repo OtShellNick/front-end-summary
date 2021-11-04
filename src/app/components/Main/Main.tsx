@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, {Suspense, lazy, useEffect} from "react";
 
 import './Main.scss';
 
@@ -9,27 +9,32 @@ const Works = lazy(() => import("@components/Main/Works/export"));
 const Contacts = lazy(() => import("@components/Main/Contacts/export"));
 
 import IconShow from './assets/list.svg?tsx';
+import {useDispatch, useSelector} from "react-redux";
+import {IInitialState} from "../../../store/store";
+import {setAsideActionCreator} from "../../../actions/setAsideAction";
+import {setDeviceWidthAction} from "../../../actions/setDeviceWidthAction";
 
-interface IProps {
-    activeTab: string,
-    setMenu: (a: string) => void
-    setAside: (e: string) => void
-    stateAside: boolean
-}
-
-export const Main = ({ activeTab, setMenu, setAside, stateAside }: IProps) => {
+export const Main = () => {
     const deviceWidth = window.screen.width;
+    const asideMenu = useSelector<IInitialState, boolean>(state => state.asideMenu);
+    const activeMenu = useSelector<IInitialState, string>(state => state.activeMenu);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setDeviceWidthAction(deviceWidth));
+    }, [deviceWidth])
+
     return <main className='main'>
-        <div className='main__show' onClick={() => setAside('open')} style={{
-            display: (deviceWidth > 800 && stateAside) ? 'none' : 'flex',
+        <div className='main__show' onClick={() => dispatch(setAsideActionCreator(true))} style={{
+            display: (deviceWidth > 800 && asideMenu) ? 'none' : 'flex',
         }}>
             <IconShow/>
         </div>
         <Suspense fallback={<Preloader/>}>
-            {activeTab === 'main' && <MainPage setMenu={setMenu}/>}
-            {activeTab === 'about' && <About/>}
-            {activeTab === 'works' && <Works/>}
-            {activeTab === 'contacts' && <Contacts/>}
+            {activeMenu === 'main' && <MainPage/>}
+            {activeMenu === 'about' && <About/>}
+            {activeMenu === 'works' && <Works/>}
+            {activeMenu === 'contacts' && <Contacts/>}
         </Suspense>
     </main>
 }

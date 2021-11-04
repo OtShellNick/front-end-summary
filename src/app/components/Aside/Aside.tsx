@@ -6,32 +6,31 @@ import {Header} from "@components/Aside/components/Header/Header";
 import {Menu} from "@components/Aside/components/Menu/Menu";
 import {Footer} from "@components/Aside/components/Footer/Footer";
 import classNames from "classnames";
+import {useDispatch, useSelector} from "react-redux";
+import {IInitialState} from "../../../store/store";
+import {setAsideActionCreator} from "../../../actions/setAsideAction";
 
-interface IProps {
-    setMenu: object,
-    activeTab: object,
-    setAside: (e: string) => void,
-    stateAside: boolean
-}
-
-export const Aside = ( { setMenu, activeTab, setAside, stateAside }: IProps) => {
+export const Aside = () => {
     const aside = useRef<HTMLDivElement>(null);
-    const deviceWidth = window.screen.width;
+    const deviceWidth = useSelector<IInitialState, number>(state => state.deviceWidth);
+    const asideMenu = useSelector<IInitialState, boolean>(state => state.asideMenu);
+    const activeMenu = useSelector<IInitialState, string>(state => state.activeMenu);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
-            if (deviceWidth < 800 && stateAside && e.target instanceof Node && !aside.current?.contains(e.target)) {
-                setAside('close');
+            if (deviceWidth < 800 && !asideMenu && e.target instanceof Node && !aside.current?.contains(e.target)) {
+                dispatch(setAsideActionCreator(false));
             }
         }
 
         document.addEventListener('click', handleClick);
 
         return () => document.removeEventListener('click', handleClick)
-    }, [stateAside])
-    return <aside ref={aside} className={classNames(stateAside ? 'aside' : 'aside__closed')}>
-        <Header onClose={() => setAside('close')} isOpen={stateAside}/>
-        {stateAside && <Menu setMenu={setMenu} activeTab={activeTab} setAside={setAside}/>}
-        {stateAside && <Footer/>}
+    }, [asideMenu])
+    return <aside ref={aside} className={classNames(asideMenu ? 'aside' : 'aside__closed')}>
+        <Header onClose={() => dispatch(setAsideActionCreator(false))} isOpen={asideMenu}/>
+        {asideMenu && <Menu activeTab={activeMenu}/>}
+        {asideMenu && <Footer/>}
     </aside>
 }

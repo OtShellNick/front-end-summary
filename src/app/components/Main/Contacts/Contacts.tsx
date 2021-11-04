@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 
 import './Contacts.scss';
-import {sendMessage} from "@/app/actions/tsend";
+import {sendMessage} from "@/actions/tsend";
 import {Footer} from "@components/Footer/Footer";
 
 export const Contacts = () => {

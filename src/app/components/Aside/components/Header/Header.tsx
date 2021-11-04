@@ -4,6 +4,8 @@ import './Header.scss';
 
 import ava from '@components/Aside/components/Header/assets/ava.png';
 import IconShow from './assets/x-lg.svg?tsx';
+import {useSelector} from "react-redux";
+import {IInitialState} from "../../../../../store/store";
 
 interface IHeaderProps {
     isOpen: boolean
@@ -11,7 +13,7 @@ interface IHeaderProps {
 }
 
 export const Header = ({ onClose, isOpen }: IHeaderProps) => {
-    const deviseWidth = window.screen.width;
+    const deviceWidth = useSelector<IInitialState, number>(state => state.deviceWidth);
 
     return <header className='header'>
         <div className='header__ava-wrapper mb-3' style={{
@@ -21,7 +23,7 @@ export const Header = ({ onClose, isOpen }: IHeaderProps) => {
             <div className='header__ava-background'></div>
         </div>
         <div className='header__show' onClick={onClose} style={{
-            display: deviseWidth < 800 ? 'block' : 'none'
+            display: deviceWidth < 800 ? 'block' : 'none'
         }}>
             <IconShow style={{
                 transform: isOpen ? 'rotate(180deg)' : '',
