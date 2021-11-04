@@ -35,12 +35,12 @@ export const Main = () => {
             <IconShow onClick={() => dispatch(setAsideActionCreator(true))}/>
             <ul className='main__show_contacts-list'>
                 <li>
-                    <a href="tel:+79782362326">
+                    <a className='link mail__link' href={`mailto:otshellnick@yandex.ru`}>
                         <IconMail/>
                     </a>
                 </li>
                 <li>
-                    <a className='link mail__link' href={`mailto:otshellnick@yandex.ru`}>
+                    <a href="tel:+79782362326">
                         <IconPhone/>
                     </a>
                 </li>
